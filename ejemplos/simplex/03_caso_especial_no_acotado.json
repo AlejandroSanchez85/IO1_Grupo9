@@ -1,0 +1,17 @@
+{
+  "tipo": "simplex",
+  "titulo": "03 · Caso especial: problema NO ACOTADO",
+  "nombre": "Caso especial: falta una restricción de mercado (no acotado)",
+  "descripcion": "Problema de prueba. Las restricciones no limitan el crecimiento de Producto B, por eso la utilidad puede crecer sin límite. El software debe avisar NO ACOTADO.",
+  "sentido": "max",
+  "descripcion_z": "Utilidad",
+  "unidad_z": "miles COP",
+  "variables": [
+    {"nombre": "Producto A", "unidad": "unidades", "c": "2"},
+    {"nombre": "Producto B", "unidad": "unidades", "c": "1"}
+  ],
+  "restricciones": [
+    {"nombre": "Diferencia de inventario", "unidad": "unidades", "a": ["1", "-1"], "signo": "<=", "b": "10"},
+    {"nombre": "Balance de materia prima", "unidad": "kg", "a": ["2", "-1"], "signo": "<=", "b": "40"}
+  ]
+}

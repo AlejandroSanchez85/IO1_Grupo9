@@ -1,0 +1,17 @@
+{
+  "tipo": "simplex",
+  "titulo": "05 · Caso especial: DEGENERACIÓN (empate en la razón mínima)",
+  "nombre": "Caso especial: solución degenerada",
+  "descripcion": "Problema de prueba. En la primera iteración las dos razones empatan (8/4 = 4/2 = 2), así que una variable básica queda en 0 (solución degenerada).",
+  "sentido": "max",
+  "descripcion_z": "Utilidad",
+  "unidad_z": "miles COP",
+  "variables": [
+    {"nombre": "Producto A", "unidad": "unidades", "c": "3"},
+    {"nombre": "Producto B", "unidad": "unidades", "c": "9"}
+  ],
+  "restricciones": [
+    {"nombre": "Horas de máquina", "unidad": "horas", "a": ["1", "4"], "signo": "<=", "b": "8"},
+    {"nombre": "Horas de empaque", "unidad": "horas", "a": ["1", "2"], "signo": "<=", "b": "4"}
+  ]
+}

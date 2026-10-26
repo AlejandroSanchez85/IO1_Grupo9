@@ -1,0 +1,23 @@
+{
+  "tipo": "transporte",
+  "titulo": "01 · Caso real: Cementos Argos – despacho semanal de concreto (Vogel)",
+  "nombre": "Cementos Argos S.A. – Despacho de concreto premezclado desde plantas hacia zonas de obra (Bogotá)",
+  "descripcion": "Modelo 2 del caso real. Red de 3 plantas dosificadoras (Fontibón, Puente Aranda, Autopista Norte) y 3 macrozonas de obra (Occidente, Centro-Chapinero, Norte). Se decide cuántos lotes de 10 m³ (viajes de camión mixer) despachar por semana desde cada planta a cada zona para minimizar el costo total semanal de flete. Costo unitario en miles de COP por lote, estimado por el grupo con el enfoque de curvas isócronas de tiempo de recorrido urbano y costo operativo por viaje de Gómez y Moon. Modelo balanceado: oferta total = demanda total = 130 lotes (1.300 m³). Supuestos: flota homogénea de mixer de 10 m³, el flete incluye cargue, descargue y lavado, demanda conocida y constante.",
+  "unidad_producto": "lotes de 10 m³",
+  "unidad_costo": "miles de COP",
+  "origenes": [
+    {"nombre": "Planta Fontibón", "oferta": "45"},
+    {"nombre": "Planta Puente Aranda", "oferta": "50"},
+    {"nombre": "Planta Autopista Norte", "oferta": "35"}
+  ],
+  "destinos": [
+    {"nombre": "Obras Zona Occidente", "demanda": "40"},
+    {"nombre": "Obras Centro-Chapinero", "demanda": "55"},
+    {"nombre": "Obras Zona Norte", "demanda": "35"}
+  ],
+  "costos": [
+    ["280", "420", "580"],
+    ["360", "250", "490"],
+    ["540", "450", "270"]
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "tipo": "simplex",
+  "titulo": "01 · Caso real: Cementos Argos – producción semanal de concreto (Simplex)",
+  "nombre": "Cementos Argos S.A. – Programación semanal de dosificación de concreto premezclado (Regional Bogotá)",
+  "descripcion": "Modelo 1 del caso real. Planta mezcladora principal de la Regional Bogotá. Se decide cuántos lotes de 10 m³ fabricar por semana de cada tipo de concreto (Estándar 3000 PSI / 21 MPa para vivienda, Estructural 4000 PSI / 28 MPa para edificaciones y puentes, Bombeable de fraguado rápido para placas e infraestructura vial) para maximizar la utilidad neta semanal de contribución, respetando la capacidad de cemento en silos (215 ton), agregados pétreos grava y arena (1.020 ton), horas-ciclo de despacho de la planta (150 h) y aditivo plastificante (200 L). Coeficientes estimados por el grupo a partir de valores típicos de la industria (Gómez y Moon; Acosta y Álvarez, UNAD 2021; UNAL). Supuestos: linealidad, inventario pleno el lunes, operación ininterrumpida y variables continuas.",
+  "sentido": "max",
+  "descripcion_z": "Utilidad neta semanal de contribución",
+  "unidad_z": "miles de COP/semana",
+  "variables": [
+    {"nombre": "Concreto Estándar 3000 PSI", "unidad": "lotes de 10 m³/semana", "c": "1200"},
+    {"nombre": "Concreto Estructural 4000 PSI", "unidad": "lotes de 10 m³/semana", "c": "1600"},
+    {"nombre": "Concreto Bombeable Fraguado Rápido", "unidad": "lotes de 10 m³/semana", "c": "1500"}
+  ],
+  "restricciones": [
+    {"nombre": "Cemento en silos", "unidad": "ton/semana", "a": ["3", "4", "3.5"], "signo": "<=", "b": "215"},
+    {"nombre": "Agregados pétreos (grava y arena)", "unidad": "ton/semana", "a": ["18", "16", "17"], "signo": "<=", "b": "1020"},
+    {"nombre": "Horas-ciclo de despacho", "unidad": "h/semana", "a": ["2", "3", "2.5"], "signo": "<=", "b": "150"},
+    {"nombre": "Aditivo plastificante", "unidad": "L/semana", "a": ["0", "0", "10"], "signo": "<=", "b": "200"}
+  ]
+}

@@ -1,0 +1,3 @@
+# Este proyecto NO necesita librerías externas.
+# Solo requiere Python 3.10+ con Tkinter (viene incluido en el instalador de python.org).
+# No se usa SciPy, PuLP, OR-Tools ni ningún otro programa que resuelva el problema.

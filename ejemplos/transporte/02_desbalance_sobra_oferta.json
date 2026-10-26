@@ -1,0 +1,53 @@
+{
+  "tipo": "transporte",
+  "titulo": "02 · Prueba: desbalanceado (sobra oferta → destino ficticio)",
+  "nombre": "Desbalance: la oferta supera la demanda",
+  "descripcion": "Oferta total 300 y demanda total 260: el software agrega un destino ficticio con demanda 40 y costo 0.",
+  "unidad_producto": "toneladas",
+  "unidad_costo": "miles COP",
+  "origenes": [
+    {
+      "nombre": "Bodega A",
+      "oferta": "120"
+    },
+    {
+      "nombre": "Bodega B",
+      "oferta": "80"
+    },
+    {
+      "nombre": "Bodega C",
+      "oferta": "100"
+    }
+  ],
+  "destinos": [
+    {
+      "nombre": "Cliente 1",
+      "demanda": "90"
+    },
+    {
+      "nombre": "Cliente 2",
+      "demanda": "110"
+    },
+    {
+      "nombre": "Cliente 3",
+      "demanda": "60"
+    }
+  ],
+  "costos": [
+    [
+      "8",
+      "6",
+      "10"
+    ],
+    [
+      "9",
+      "12",
+      "13"
+    ],
+    [
+      "14",
+      "9",
+      "16"
+    ]
+  ]
+}

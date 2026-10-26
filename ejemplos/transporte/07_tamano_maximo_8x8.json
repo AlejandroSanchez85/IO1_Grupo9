@@ -1,0 +1,158 @@
+{
+  "tipo": "transporte",
+  "titulo": "07 · Prueba de tamaño máximo: 8 orígenes × 8 destinos (desbalanceado)",
+  "nombre": "Prueba de tamaño máximo (8 × 8, desbalanceado)",
+  "descripcion": "Problema de prueba con el tamaño máximo pedido. La oferta (1000) supera la demanda (950): se agrega un destino ficticio y la tabla queda de 8 × 9.",
+  "unidad_producto": "toneladas",
+  "unidad_costo": "miles COP",
+  "origenes": [
+    {
+      "nombre": "Planta 1",
+      "oferta": "140"
+    },
+    {
+      "nombre": "Planta 2",
+      "oferta": "120"
+    },
+    {
+      "nombre": "Planta 3",
+      "oferta": "160"
+    },
+    {
+      "nombre": "Planta 4",
+      "oferta": "100"
+    },
+    {
+      "nombre": "Planta 5",
+      "oferta": "130"
+    },
+    {
+      "nombre": "Planta 6",
+      "oferta": "110"
+    },
+    {
+      "nombre": "Planta 7",
+      "oferta": "150"
+    },
+    {
+      "nombre": "Planta 8",
+      "oferta": "90"
+    }
+  ],
+  "destinos": [
+    {
+      "nombre": "Ciudad 1",
+      "demanda": "120"
+    },
+    {
+      "nombre": "Ciudad 2",
+      "demanda": "130"
+    },
+    {
+      "nombre": "Ciudad 3",
+      "demanda": "100"
+    },
+    {
+      "nombre": "Ciudad 4",
+      "demanda": "140"
+    },
+    {
+      "nombre": "Ciudad 5",
+      "demanda": "110"
+    },
+    {
+      "nombre": "Ciudad 6",
+      "demanda": "125"
+    },
+    {
+      "nombre": "Ciudad 7",
+      "demanda": "95"
+    },
+    {
+      "nombre": "Ciudad 8",
+      "demanda": "130"
+    }
+  ],
+  "costos": [
+    [
+      "7",
+      "14",
+      "20",
+      "20",
+      "24",
+      "7",
+      "11",
+      "23"
+    ],
+    [
+      "23",
+      "21",
+      "17",
+      "29",
+      "22",
+      "21",
+      "30",
+      "27"
+    ],
+    [
+      "28",
+      "28",
+      "19",
+      "28",
+      "28",
+      "22",
+      "18",
+      "11"
+    ],
+    [
+      "4",
+      "23",
+      "6",
+      "7",
+      "13",
+      "30",
+      "7",
+      "18"
+    ],
+    [
+      "4",
+      "30",
+      "25",
+      "19",
+      "25",
+      "14",
+      "10",
+      "16"
+    ],
+    [
+      "12",
+      "15",
+      "15",
+      "29",
+      "16",
+      "27",
+      "20",
+      "24"
+    ],
+    [
+      "6",
+      "27",
+      "14",
+      "6",
+      "21",
+      "21",
+      "13",
+      "13"
+    ],
+    [
+      "18",
+      "8",
+      "24",
+      "26",
+      "26",
+      "22",
+      "13",
+      "4"
+    ]
+  ]
+}

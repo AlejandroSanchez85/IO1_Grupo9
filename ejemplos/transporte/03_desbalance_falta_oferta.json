@@ -1,0 +1,60 @@
+{
+  "tipo": "transporte",
+  "titulo": "03 · Prueba: desbalanceado (falta oferta → origen ficticio)",
+  "nombre": "Desbalance: la demanda supera la oferta",
+  "descripcion": "Demanda total 220 y oferta total 180: el software agrega un origen ficticio con oferta 40 (demanda insatisfecha). También presenta degeneración y empates.",
+  "unidad_producto": "pedidos",
+  "unidad_costo": "miles COP",
+  "origenes": [
+    {
+      "nombre": "Centro 1",
+      "oferta": "70"
+    },
+    {
+      "nombre": "Centro 2",
+      "oferta": "50"
+    },
+    {
+      "nombre": "Centro 3",
+      "oferta": "60"
+    }
+  ],
+  "destinos": [
+    {
+      "nombre": "Zona Norte",
+      "demanda": "60"
+    },
+    {
+      "nombre": "Zona Sur",
+      "demanda": "70"
+    },
+    {
+      "nombre": "Zona Este",
+      "demanda": "40"
+    },
+    {
+      "nombre": "Zona Oeste",
+      "demanda": "50"
+    }
+  ],
+  "costos": [
+    [
+      "5",
+      "8",
+      "6",
+      "7"
+    ],
+    [
+      "6",
+      "4",
+      "9",
+      "5"
+    ],
+    [
+      "7",
+      "6",
+      "5",
+      "8"
+    ]
+  ]
+}

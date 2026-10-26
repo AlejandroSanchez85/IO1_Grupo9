@@ -1,0 +1,53 @@
+{
+  "tipo": "transporte",
+  "titulo": "04 · Caso especial: empates de penalización y degeneración",
+  "nombre": "Caso especial: empates y degeneración",
+  "descripcion": "Varias líneas empatan en la mayor penalización y una fila y una columna se satisfacen a la vez (solución degenerada con una básica en 0).",
+  "unidad_producto": "unidades",
+  "unidad_costo": "$",
+  "origenes": [
+    {
+      "nombre": "Fábrica 1",
+      "oferta": "20"
+    },
+    {
+      "nombre": "Fábrica 2",
+      "oferta": "30"
+    },
+    {
+      "nombre": "Fábrica 3",
+      "oferta": "25"
+    }
+  ],
+  "destinos": [
+    {
+      "nombre": "Almacén 1",
+      "demanda": "20"
+    },
+    {
+      "nombre": "Almacén 2",
+      "demanda": "30"
+    },
+    {
+      "nombre": "Almacén 3",
+      "demanda": "25"
+    }
+  ],
+  "costos": [
+    [
+      "2",
+      "3",
+      "4"
+    ],
+    [
+      "3",
+      "2",
+      "1"
+    ],
+    [
+      "4",
+      "1",
+      "2"
+    ]
+  ]
+}

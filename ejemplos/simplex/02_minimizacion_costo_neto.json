@@ -1,0 +1,19 @@
+{
+  "tipo": "simplex",
+  "titulo": "02 · Prueba: minimización (costo neto con ingresos)",
+  "nombre": "Minimizar el costo neto de tres mezclas",
+  "descripcion": "Problema de prueba de MINIMIZACIÓN con restricciones ≤. Un coeficiente negativo en z significa que la mezcla deja ingreso neto (reduce el costo). Resultado esperado: z mínimo = -11.",
+  "sentido": "min",
+  "descripcion_z": "Costo neto diario",
+  "unidad_z": "millones COP/día",
+  "variables": [
+    {"nombre": "Mezcla A", "unidad": "toneladas/día", "c": "1"},
+    {"nombre": "Mezcla B", "unidad": "toneladas/día", "c": "-3"},
+    {"nombre": "Mezcla C", "unidad": "toneladas/día", "c": "2"}
+  ],
+  "restricciones": [
+    {"nombre": "Capacidad del reactor", "unidad": "horas/día", "a": ["3", "-1", "2"], "signo": "<=", "b": "7"},
+    {"nombre": "Balance de insumo X", "unidad": "toneladas/día", "a": ["-2", "4", "0"], "signo": "<=", "b": "12"},
+    {"nombre": "Emisiones permitidas", "unidad": "kg CO2/día", "a": ["-4", "3", "8"], "signo": "<=", "b": "10"}
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "tipo": "transporte",
+  "titulo": "05 · Caso especial: rutas prohibidas (M), factible",
+  "nombre": "Caso especial: rutas prohibidas",
+  "descripcion": "Dos rutas no se pueden usar (costo M). El método las evita y encuentra una solución factible.",
+  "unidad_producto": "cajas",
+  "unidad_costo": "miles COP",
+  "origenes": [
+    {
+      "nombre": "Planta A",
+      "oferta": "50"
+    },
+    {
+      "nombre": "Planta B",
+      "oferta": "40"
+    },
+    {
+      "nombre": "Planta C",
+      "oferta": "60"
+    }
+  ],
+  "destinos": [
+    {
+      "nombre": "Tienda 1",
+      "demanda": "40"
+    },
+    {
+      "nombre": "Tienda 2",
+      "demanda": "70"
+    },
+    {
+      "nombre": "Tienda 3",
+      "demanda": "40"
+    }
+  ],
+  "costos": [
+    [
+      "6",
+      "M",
+      "4"
+    ],
+    [
+      "5",
+      "7",
+      "M"
+    ],
+    [
+      "8",
+      "5",
+      "6"
+    ]
+  ]
+}

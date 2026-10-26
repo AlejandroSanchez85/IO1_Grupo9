@@ -1,0 +1,29 @@
+{
+  "tipo": "simplex",
+  "titulo": "06 · Prueba de tamaño máximo: 8 variables × 8 restricciones",
+  "nombre": "Prueba de tamaño máximo (8 × 8)",
+  "descripcion": "Problema de prueba para demostrar que el software funciona con el tamaño máximo pedido (8 variables y 8 restricciones) sin tocar el código.",
+  "sentido": "max",
+  "descripcion_z": "Utilidad mensual",
+  "unidad_z": "millones COP/mes",
+  "variables": [
+    {"nombre": "Producto 1", "unidad": "lotes/mes", "c": "11"},
+    {"nombre": "Producto 2", "unidad": "lotes/mes", "c": "8"},
+    {"nombre": "Producto 3", "unidad": "lotes/mes", "c": "13"},
+    {"nombre": "Producto 4", "unidad": "lotes/mes", "c": "15"},
+    {"nombre": "Producto 5", "unidad": "lotes/mes", "c": "4"},
+    {"nombre": "Producto 6", "unidad": "lotes/mes", "c": "9"},
+    {"nombre": "Producto 7", "unidad": "lotes/mes", "c": "7"},
+    {"nombre": "Producto 8", "unidad": "lotes/mes", "c": "13"}
+  ],
+  "restricciones": [
+    {"nombre": "Corte", "unidad": "horas/mes", "a": ["0", "4", "1", "0", "4", "2", "3", "0"], "signo": "<=", "b": "100"},
+    {"nombre": "Ensamble", "unidad": "horas/mes", "a": ["1", "1", "1", "2", "2", "2", "2", "1"], "signo": "<=", "b": "190"},
+    {"nombre": "Pintura", "unidad": "horas/mes", "a": ["1", "0", "4", "2", "1", "2", "0", "3"], "signo": "<=", "b": "120"},
+    {"nombre": "Secado", "unidad": "horas/mes", "a": ["0", "2", "4", "2", "2", "1", "1", "4"], "signo": "<=", "b": "170"},
+    {"nombre": "Control de calidad", "unidad": "horas/mes", "a": ["0", "4", "1", "1", "2", "3", "1", "2"], "signo": "<=", "b": "80"},
+    {"nombre": "Empaque", "unidad": "horas/mes", "a": ["4", "2", "0", "4", "2", "2", "0", "1"], "signo": "<=", "b": "100"},
+    {"nombre": "Almacenamiento", "unidad": "m2", "a": ["0", "0", "1", "2", "0", "3", "0", "1"], "signo": "<=", "b": "80"},
+    {"nombre": "Transporte interno", "unidad": "viajes/mes", "a": ["1", "4", "1", "0", "1", "0", "2", "2"], "signo": "<=", "b": "150"}
+  ]
+}

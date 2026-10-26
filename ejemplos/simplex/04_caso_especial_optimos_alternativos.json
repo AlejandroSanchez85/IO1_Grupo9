@@ -1,0 +1,17 @@
+{
+  "tipo": "simplex",
+  "titulo": "04 · Caso especial: óptimos ALTERNATIVOS",
+  "nombre": "Caso especial: soluciones óptimas múltiples",
+  "descripcion": "Problema de prueba. La función objetivo es paralela a la restricción de horas de ensamble, por eso hay infinitas soluciones con la misma utilidad máxima (z = 10).",
+  "sentido": "max",
+  "descripcion_z": "Utilidad",
+  "unidad_z": "millones COP",
+  "variables": [
+    {"nombre": "Lote tipo 1", "unidad": "lotes", "c": "2"},
+    {"nombre": "Lote tipo 2", "unidad": "lotes", "c": "4"}
+  ],
+  "restricciones": [
+    {"nombre": "Horas de ensamble", "unidad": "horas", "a": ["1", "2"], "signo": "<=", "b": "5"},
+    {"nombre": "Horas de pintura", "unidad": "horas", "a": ["1", "1"], "signo": "<=", "b": "4"}
+  ]
+}
