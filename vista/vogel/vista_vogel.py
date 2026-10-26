@@ -2,7 +2,7 @@
 vista/vogel/vista_vogel.py
 ==========================
 Pantalla completa del método de Vogel: datos, planteamiento, paso a paso,
-todas las tablas, solución, optimalidad (MODI), gráficas y reporte.
+todas las tablas, solución y optimalidad (MODI).
 """
 from __future__ import annotations
 
@@ -10,12 +10,9 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from ..componentes.dialogos import DialogosMixin
-from ..componentes.panel_reporte import PanelReporte
 from ..formato import FORMATO
-from ..reportes import html_vogel, texto_vogel
 from ..tema import COLORES, FUENTES
 from .panel_datos_vogel import PanelDatosVogel
-from .panel_graficas_vogel import PanelGraficasVogel
 from .panel_pasos_vogel import PanelPasosVogel, PanelTodosPasosVogel
 from .panel_resultados_vogel import PanelModi, PanelPlanteamientoVogel, PanelSolucionVogel
 
@@ -42,18 +39,10 @@ class VistaVogel(DialogosMixin, tk.Frame):
         self.panel_todos = PanelTodosPasosVogel(self.cuaderno)
         self.panel_solucion = PanelSolucionVogel(self.cuaderno)
         self.panel_modi = PanelModi(self.cuaderno)
-        self.panel_graficas = PanelGraficasVogel(self.cuaderno)
-        self.panel_reporte = PanelReporte(self.cuaderno, "reporte_vogel")
         for panel, titulo in ((self.panel_datos, "1 · Datos"), (self.panel_planteamiento, "2 · Modelo"),
                               (self.panel_pasos, "3 · Paso a paso"), (self.panel_todos, "4 · Tablas"),
-                              (self.panel_solucion, "5 · Solución"), (self.panel_modi, "6 · MODI"),
-                              (self.panel_graficas, "7 · Gráficas"), (self.panel_reporte, "8 · Reporte")):
+                              (self.panel_solucion, "5 · Solución"), (self.panel_modi, "6 · MODI")):
             self.cuaderno.add(panel, text=titulo)
-
-        # --- Pestañas 7 · Gráficas y 8 · Reporte ---
-        self.cuaderno.hide(self.panel_graficas)
-        self.cuaderno.hide(self.panel_reporte)
-        
         FORMATO.suscribir(self.refrescar)
 
     # --------------------------------------------------- API del controlador
@@ -69,9 +58,6 @@ class VistaVogel(DialogosMixin, tk.Frame):
         self.panel_solucion.mostrar(resultado, modi)
         if modi is not None:
             self.panel_modi.mostrar(resultado, modi)
-        self.panel_graficas.mostrar(resultado)
-        self.panel_reporte.configurar(lambda: texto_vogel(self.resultado, self.modi, FORMATO),
-                                      lambda: html_vogel(self.resultado, self.modi, FORMATO))
         self._actualizar_franja()
         self.cuaderno.select(self.panel_pasos)
 
@@ -101,7 +87,7 @@ class VistaVogel(DialogosMixin, tk.Frame):
         if self.resultado is None:
             return
         for panel in (self.panel_planteamiento, self.panel_pasos, self.panel_todos, self.panel_solucion,
-                      self.panel_modi, self.panel_graficas, self.panel_reporte):
+                      self.panel_modi):
             panel.refrescar()
         self._actualizar_franja()
 

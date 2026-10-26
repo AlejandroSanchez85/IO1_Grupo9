@@ -69,10 +69,6 @@ COLORES = {
     "ciclo_mas": "#16A34A",
     "ciclo_menos": "#DC2626",
 }
-
-PALETA_GRAFICAS = ["#4F46E5", "#0EA5E9", "#10B981", "#F59E0B", "#EF4444",
-                   "#8B5CF6", "#EC4899", "#14B8A6", "#F97316"]
-
 FUENTES: dict[str, tkfont.Font] = {}
 ESCALA = {"factor": 1.0}      # 1.0 = pantalla normal; 1.5 = Windows con escala al 150 %
 

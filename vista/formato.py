@@ -1,7 +1,7 @@
 """
 vista/formato.py
 ================
-Formato de los números que se MUESTRAN en pantalla y en los reportes.
+Formato de los números que se MUESTRAN en pantalla.
 
 El modelo calcula con fracciones exactas; aquí se decide cómo verlas:
 modo "fraccion" (5/3) o modo "decimal" (1.6667). El usuario cambia el modo

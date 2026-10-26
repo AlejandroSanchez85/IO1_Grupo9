@@ -21,7 +21,7 @@ AYUDA = [
      "variable), el valor disponible b_i y la unidad del recurso. Todas las restricciones son ≤ y b_i ≥ 0.\n",
      "vineta"),
     ("• Pulse «Resolver con Simplex». Revise: 2 · Modelo (forma estándar), 3 · Paso a paso (cada tabla con la "
-     "variable que entra, la que sale y el pivote), 5 · Solución, 6 · Sensibilidad, 7 · Gráficas, 8 · Reporte.\n",
+     "variable que entra, la que sale y el pivote), 5 · Solución y 6 · Sensibilidad.\n",
      "vineta"),
     ("\n2. Método de Vogel (transporte)\n", "subtitulo"),
     ("• Escriba la unidad del producto (ej. cajas) y la moneda (ej. COP). Elija el número de orígenes y destinos "
