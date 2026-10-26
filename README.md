@@ -258,7 +258,7 @@ El proyecto Usa `unittest`, que viene con Python (no hay que instalar nada). **L
 | **Barra lateral** | Navegar entre **Inicio**, **Simplex**, **Transporte · Vogel** y **Ayuda** |
 | **Mostrar números como** | Ver los resultados en **fracciones** (5/3) o **decimales** (1.6667). Se actualiza todo al instante |
 | **Franja de color** | Resumen del resultado (verde = óptimo, amarillo = caso especial, rojo = no acotado/infactible) |
-| **Pestañas 1 a 8** | Datos, modelo, paso a paso, tablas, solución, sensibilidad/MODI, gráficas y reporte |
+| **Pestañas 1 a 6** | Datos, modelo, paso a paso, tablas, solución y sensibilidad (Simplex) o MODI (Vogel) |
 
 ### 7.2 Método Simplex – cómo ingresar un problema
 
@@ -298,8 +298,6 @@ El proyecto Usa `unittest`, que viene con Python (no hay que instalar nada). **L
 | **4 · Tablas** | Todas las tablas una debajo de otra |
 | **5 · Solución** | Plan óptimo con nombres y unidades, uso de recursos, holguras, avisos de casos especiales y comprobación |
 | **6 · Sensibilidad** | Precios sombra, costos reducidos, rangos de cada **cⱼ** y de cada **bᵢ**, matriz B⁻¹ y una frase de interpretación para cada uno |
-| **7 · Gráficas** | Evolución de z, valor de cada variable, aporte a z, uso de recursos y precios sombra |
-| **8 · Reporte** | Todo el procedimiento en texto; botones **Copiar**, **Guardar .txt** |
 
 ### 7.4 Método de Vogel – cómo ingresar un problema
 
@@ -335,8 +333,6 @@ El proyecto Usa `unittest`, que viene con Python (no hay que instalar nada). **L
 | **4 · Tablas** | Todos los pasos uno debajo de otro |
 | **5 · Solución** | Tabla final, plan de envíos con nombres y unidades, **costo total** con su cálculo y avisos de casos especiales |
 | **6 · MODI** | Prueba de optimalidad (uᵢ, vⱼ, costos reducidos dᵢⱼ, ciclo + / −) y **comparación del costo de Vogel con el óptimo** |
-| **7 · Gráficas** | Red de distribución, costo por ruta, oferta usada, demanda atendida y penalización máxima por paso |
-| **8 · Reporte** | Todo el procedimiento en texto; botones **Copiar**, **Guardar .txt** |
 
 ### 7.6 Cómo escribir los números
 
@@ -429,9 +425,8 @@ IO1_Grupo9/
 │   ├── ventana_principal.py           Ventana, barra lateral y navegación
 │   ├── vista_inicio.py                Pantalla de inicio
 │   ├── vista_ayuda.py                 Ayuda dentro del programa
-│   ├── componentes/                   Tablas, gráficas, tarjetas, avisos
+│   ├── componentes/                   Tablas, tarjetas, avisos
 │   ├── explicaciones/                 Textos del paso a paso (Simplex, sensibilidad, Vogel, MODI)
-│   ├── reportes/                      Reporte en texto
 │   ├── simplex/                       Pestañas del Método Simplex
 │   └── vogel/                         Pestañas del Método de Vogel
 │
