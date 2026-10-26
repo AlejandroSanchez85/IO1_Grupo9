@@ -327,14 +327,14 @@ class TextoRico(tk.Frame):
         t.tag_configure("pequena", font=FUENTES["pequena"], foreground=c["texto_suave"])
         t.tag_configure("mono", font=FUENTES["mono"])
         t.tag_configure("formula", font=FUENTES["mono"], background=c["superficie_alt"],
-                        lmargin1=18, lmargin2=18, foreground="#1E293B")
+                        lmargin1=18, lmargin2=18, foreground=COLORES["texto"])
         t.tag_configure("vineta", lmargin1=14, lmargin2=30)
         t.tag_configure("exito", foreground=c["exito"], font=FUENTES["base_negrita"])
         t.tag_configure("error", foreground=c["error"], font=FUENTES["base_negrita"])
         t.tag_configure("advertencia", foreground=c["advertencia"], font=FUENTES["base_negrita"])
         t.tag_configure("info", foreground=c["info"], font=FUENTES["base_negrita"])
-        t.tag_configure("entra", foreground="#1D4ED8", font=FUENTES["base_negrita"])
-        t.tag_configure("sale", foreground="#C2410C", font=FUENTES["base_negrita"])
+        t.tag_configure("entra", foreground=COLORES["info"], font=FUENTES["base_negrita"])
+        t.tag_configure("sale", foreground=COLORES["advertencia"], font=FUENTES["base_negrita"])
         t.tag_configure("pivote", background=c["celda_pivote"], foreground="#FFFFFF",
                         font=FUENTES["base_negrita"])
         t.tag_configure("resaltado", background=c["razon_minima"])

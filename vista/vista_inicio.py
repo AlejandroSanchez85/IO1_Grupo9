@@ -27,7 +27,7 @@ class VistaInicio(tk.Frame):
         tk.Label(portada, text="Software de Investigación de Operaciones I", font=FUENTES["titulo"],
                  bg=COLORES["primario"], fg="#FFFFFF", anchor="w").pack(fill="x", padx=28, pady=(24, 2))
         tk.Label(portada, text="Grupo 9 · Método Simplex (maximizar y minimizar) y Método de Vogel (transporte)",
-                 font=FUENTES["subtitulo"], bg=COLORES["primario"], fg="#E0E7FF", anchor="w").pack(fill="x", padx=28)
+                 font=FUENTES["subtitulo"], bg=COLORES["primario"], fg=COLORES["primario_suave"], anchor="w").pack(fill="x", padx=28)
         descripcion = tk.Label(portada, text=("Resuelve cualquier problema que usted escriba, muestra todo el procedimiento paso a paso con "
                                               "tablas, avisa los casos especiales y explica el resultado con los "
                                               "nombres y unidades del problema."),

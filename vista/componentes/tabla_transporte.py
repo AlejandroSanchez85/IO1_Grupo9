@@ -228,7 +228,7 @@ class TablaTransporteCanvas(tk.Canvas):
         f_peq = FUENTES["tabla_pequena"]
         ancho_caja = f_peq.measure(costo) + 12
         self.create_rectangle(x1 - ancho_caja, y0, x1, y0 + alto_caja,
-                              fill=c["costo_caja"] if not elegida else "#BBF7D0", outline=c["tabla_rejilla"])
+                              fill=c["costo_caja"] if not elegida else c["asignada"], outline=c["tabla_rejilla"])
         self.create_text(x1 - ancho_caja / 2, y0 + alto_caja / 2, text=costo, font=f_peq,
                          fill=c["error"] if (i, j) in self.prohibidas else c["texto_suave"], tags=("texto",))
         centro_y = (y0 + alto_caja + y1) / 2

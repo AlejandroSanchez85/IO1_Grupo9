@@ -75,7 +75,7 @@ class ElementoNavegacion(tk.Frame):
             widget.configure(bg=fondo)
         self.barra.configure(bg=barra)
         self.etiqueta.configure(fg=texto, font=fuente)
-        _icono(self.icono, self.icono_tipo, "#A5B4FC" if self.activo else texto)
+        _icono(self.icono, self.icono_tipo, COLORES["secundario"] if self.activo else texto)
 
 
 class VentanaPrincipal:
