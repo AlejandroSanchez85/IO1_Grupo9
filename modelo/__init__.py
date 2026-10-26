@@ -11,13 +11,9 @@ from .numeros import ValorM, convertir_costo, convertir_numero, texto_numero
 from .repositorio import RepositorioProblemas
 from .simplex import (AnalizadorSensibilidad, ProblemaPL, ResultadoSensibilidad, ResultadoSimplex,
                       SolverSimplex, ValidadorPL)
-from .transporte import (OptimizadorMODI, ProblemaTransporte, ResultadoMODI, ResultadoVogel,
-                         SolverVogel, ValidadorTransporte)
 
 __all__ = [
     "CasoEspecial", "ErrorArchivo", "ErrorValidacion", "ValorM", "convertir_numero",
     "convertir_costo", "texto_numero", "RepositorioProblemas", "ProblemaPL", "ValidadorPL",
     "SolverSimplex", "ResultadoSimplex", "AnalizadorSensibilidad", "ResultadoSensibilidad",
-    "ProblemaTransporte", "ValidadorTransporte", "SolverVogel", "ResultadoVogel", "OptimizadorMODI",
-    "ResultadoMODI",
 ]

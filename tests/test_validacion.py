@@ -7,7 +7,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from modelo import ErrorValidacion  # noqa: E402
 from modelo.simplex import ValidadorPL  # noqa: E402
-from modelo.transporte import ValidadorTransporte  # noqa: E402
 
 
 def datos_pl(**cambios):
@@ -54,37 +53,6 @@ class PruebasValidacionPL(unittest.TestCase):
         datos = datos_pl()
         datos["restricciones"][0]["signo"] = ">="
         self.assertIn(("signo", 0), self.campos_con_error(datos))
-
-
-class PruebasValidacionTransporte(unittest.TestCase):
-    def base(self):
-        return {"origenes": [{"nombre": "O1", "oferta": "10"}, {"nombre": "O2", "oferta": "20"}],
-                "destinos": [{"nombre": "D1", "demanda": "15"}, {"nombre": "D2", "demanda": "15"}],
-                "costos": [["4", "6"], ["5", "M"]]}
-
-    def test_datos_correctos(self):
-        p = ValidadorTransporte().validar(self.base())
-        self.assertTrue(p.esta_balanceado)
-        self.assertEqual(p.rutas_prohibidas(), [(1, 1)])
-
-    def test_errores(self):
-        datos = self.base()
-        datos["origenes"][0]["oferta"] = "-1"
-        datos["destinos"][1]["demanda"] = ""
-        datos["costos"][0][1] = "x"
-        with self.assertRaises(ErrorValidacion) as contexto:
-            ValidadorTransporte().validar(datos)
-        campos = contexto.exception.campos
-        self.assertIn(("oferta", 0), campos)
-        self.assertIn(("demanda", 1), campos)
-        self.assertIn(("costo", 0, 1), campos)
-
-    def test_oferta_total_cero(self):
-        datos = self.base()
-        datos["origenes"][0]["oferta"] = "0"
-        datos["origenes"][1]["oferta"] = "0"
-        with self.assertRaises(ErrorValidacion):
-            ValidadorTransporte().validar(datos)
 
 
 if __name__ == "__main__":

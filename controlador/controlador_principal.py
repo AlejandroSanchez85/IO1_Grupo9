@@ -10,7 +10,6 @@ from modelo import RepositorioProblemas
 from vista import VentanaPrincipal
 
 from .controlador_simplex import ControladorSimplex
-from .controlador_vogel import ControladorVogel
 
 
 class ControladorPrincipal:
@@ -18,7 +17,6 @@ class ControladorPrincipal:
         self.ventana = VentanaPrincipal()
         self.repositorio = RepositorioProblemas()
         self.simplex = ControladorSimplex(self.ventana.vista_simplex, self.repositorio)
-        self.vogel = ControladorVogel(self.ventana.vista_vogel, self.repositorio)
         raiz = self.ventana.raiz
         raiz.bind_all("<Control-Return>", lambda e: self.resolver_actual())
         raiz.bind_all("<F5>", lambda e: self.resolver_actual())
@@ -27,8 +25,7 @@ class ControladorPrincipal:
     def resolver_actual(self) -> None:
         if self.ventana.actual == "simplex":
             self.simplex.resolver()
-        elif self.ventana.actual == "vogel":
-            self.vogel.resolver()
+
 
     def iniciar(self) -> None:
         self.ventana.mostrar("inicio")

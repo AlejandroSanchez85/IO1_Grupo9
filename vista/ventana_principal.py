@@ -1,7 +1,7 @@
 """
 vista/ventana_principal.py
 ==========================
-Ventana principal: barra lateral de navegación (Inicio, Simplex, Vogel,
+Ventana principal: barra lateral de navegación (Inicio, Simplex,
 Ayuda), encabezado y el área donde se muestra cada pantalla. También
 captura cualquier error inesperado para que el programa NO se cierre.
 """
@@ -18,7 +18,6 @@ from .simplex import VistaSimplex
 from .tema import COLORES, FUENTES, aplicar_tema, px
 from .vista_ayuda import VistaAyuda
 from .vista_inicio import VistaInicio
-from .vogel import VistaVogel
 
 
 def _icono(canvas: tk.Canvas, tipo: str, color: str) -> None:
@@ -32,12 +31,6 @@ def _icono(canvas: tk.Canvas, tipo: str, color: str) -> None:
         for k in (8.5, 13.5):
             canvas.create_line(3, k, 19, k, fill=color)
             canvas.create_line(k, 3, k, 19, fill=color)
-    elif tipo == "vogel":
-        for y in (6, 16):
-            canvas.create_oval(2, y - 3, 8, y + 3, outline=color, width=2)
-            canvas.create_oval(14, y - 3, 20, y + 3, outline=color, width=2)
-        canvas.create_line(8, 6, 14, 16, fill=color, width=2)
-        canvas.create_line(8, 16, 14, 6, fill=color, width=2)
     else:
         canvas.create_oval(3, 3, 19, 19, outline=color, width=2)
         canvas.create_text(11, 11, text="?", fill=color, font=FUENTES["base_negrita"])
@@ -81,7 +74,7 @@ class ElementoNavegacion(tk.Frame):
 class VentanaPrincipal:
     def __init__(self):
         self.raiz = tk.Tk()
-        self.raiz.title("IO1 · Grupo 9 — Método Simplex y Método de Vogel")
+        self.raiz.title("IO1 · Grupo 9 — Método Simplex")
         self.raiz.geometry("1380x860")
         self.raiz.minsize(1080, 660)
         aplicar_tema(self.raiz)
@@ -97,12 +90,10 @@ class VentanaPrincipal:
         self._crear_estructura()
         self.vista_inicio = VistaInicio(self.contenido, self.mostrar)
         self.vista_simplex = VistaSimplex(self.contenido)
-        self.vista_vogel = VistaVogel(self.contenido)
         self.vista_ayuda = VistaAyuda(self.contenido)
         for clave, vista, titulo, subtitulo in (
                 ("inicio", self.vista_inicio, "Inicio", "Proyecto final · Investigación de Operaciones 1 · Grupo 9"),
                 ("simplex", self.vista_simplex, VistaSimplex.TITULO, VistaSimplex.SUBTITULO),
-                ("vogel", self.vista_vogel, VistaVogel.TITULO, VistaVogel.SUBTITULO),
                 ("ayuda", self.vista_ayuda, "Ayuda y manual de uso", "Cómo ingresar los datos, interpretar los "
                                                                     "resultados y usar los ejemplos.")):
             vista.grid(row=0, column=0, sticky="nsew")
@@ -124,12 +115,12 @@ class VentanaPrincipal:
         textos.pack(side="left", padx=10)
         tk.Label(textos, text="IO1 · Grupo 9", font=FUENTES["logo"], bg=COLORES["lateral"],
                  fg=COLORES["lateral_titulo"]).pack(anchor="w")
-        tk.Label(textos, text="Simplex · Vogel", font=FUENTES["pequena"], bg=COLORES["lateral"],
+        tk.Label(textos, text="Método Simplex", font=FUENTES["pequena"], bg=COLORES["lateral"],
                  fg=COLORES["lateral_tenue"]).pack(anchor="w")
         tk.Label(lateral, text="MENÚ", font=FUENTES["mini"], bg=COLORES["lateral"], fg=COLORES["lateral_tenue"]).pack(
             anchor="w", padx=22, pady=(6, 4))
         for clave, texto, icono in (("inicio", "Inicio", "inicio"), ("simplex", "Simplex (max / min)", "simplex"),
-                                    ("vogel", "Transporte · Vogel", "vogel"), ("ayuda", "Ayuda", "ayuda")):
+                                    ("ayuda", "Ayuda", "ayuda")):
             elemento = ElementoNavegacion(lateral, texto, icono, lambda c=clave: self.mostrar(c))
             elemento.pack(fill="x")
             self.elementos[clave] = elemento

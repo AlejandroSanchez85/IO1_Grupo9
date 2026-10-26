@@ -2,7 +2,7 @@
 main.py — Punto de entrada del programa.
 
 Proyecto final · Investigación de Operaciones 1 · Grupo 9
-Métodos: Simplex (maximizar / minimizar) y Vogel (transporte).
+Método: Simplex (maximizar / minimizar).
 
 Ejecutar:  python main.py      (en PyCharm: clic derecho sobre main.py → Run 'main')
 """

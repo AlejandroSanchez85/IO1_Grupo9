@@ -71,8 +71,7 @@ class ControladorSimplex:
             self.vista.mostrar_mensaje("Archivo", str(error), "error")
             return
         if datos.get("tipo") not in (None, self.TIPO):
-            self.vista.mostrar_mensaje("Archivo", "Este archivo es de un problema de TRANSPORTE. Ábralo en la "
-                                                  "sección «Transporte · Vogel».", "advertencia")
+            self.vista.mostrar_mensaje("Archivo", "Este archivo es de un problema de TRANSPORTE, no de Programación Lineal.", "advertencia")
             return
         self.vista.panel_datos.cargar_datos(datos)
         self.vista.seleccionar_datos()

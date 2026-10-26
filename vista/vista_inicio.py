@@ -26,7 +26,7 @@ class VistaInicio(tk.Frame):
         portada.pack(fill="x")
         tk.Label(portada, text="Software de Investigación de Operaciones I", font=FUENTES["titulo"],
                  bg=COLORES["primario"], fg="#FFFFFF", anchor="w").pack(fill="x", padx=28, pady=(24, 2))
-        tk.Label(portada, text="Grupo 9 · Método Simplex (maximizar y minimizar) y Método de Vogel (transporte)",
+        tk.Label(portada, text="Grupo 9 · Método Simplex (maximizar y minimizar)",
                  font=FUENTES["subtitulo"], bg=COLORES["primario"], fg=COLORES["primario_suave"], anchor="w").pack(fill="x", padx=28)
         descripcion = tk.Label(portada, text=("Resuelve cualquier problema que usted escriba, muestra todo el procedimiento paso a paso con "
                                               "tablas, avisa los casos especiales y explica el resultado con los "
@@ -39,7 +39,6 @@ class VistaInicio(tk.Frame):
         fila = tk.Frame(c, bg=COLORES["fondo"])
         fila.pack(fill="x", pady=16)
         fila.grid_columnconfigure(0, weight=1, uniform="m")
-        fila.grid_columnconfigure(1, weight=1, uniform="m")
         self._tarjeta_metodo(fila, 0, "Método Simplex", "Programación lineal · maximizar o minimizar",
                              ["Hasta 8 variables y 8 restricciones (≤).",
                               "Cada tabla con la variable que entra, la que sale y el pivote.",
@@ -47,15 +46,6 @@ class VistaInicio(tk.Frame):
                               "Avisa: no acotado, óptimos alternativos y degeneración.",
                               "Análisis de sensibilidad: precios sombra, costos reducidos, rangos de c_j y b_i."],
                              "Abrir Simplex", lambda: self.navegar("simplex"))
-        self._tarjeta_metodo(fila, 1, "Método de Vogel", "Transporte · minimizar costo",
-                             ["Hasta 8 orígenes × 8 destinos, balanceado o no.",
-                              "Penalizaciones de filas y columnas en cada paso.",
-                              "Celda escogida, asignación y línea tachada en cada paso.",
-                              "Avisa: desbalance (ficticio), empates y degeneración.",
-                              "Rutas prohibidas con M e infactibilidad.",
-                              "Comparación con el óptimo mediante la prueba MODI."],
-
-                             "Abrir Vogel", lambda: self.navegar("vogel"))
 
     def _tarjeta_metodo(self, fila, columna, titulo, subtitulo, puntos, texto_boton, comando):
         tarjeta = tk.Frame(fila, bg=COLORES["superficie"], highlightbackground=COLORES["borde"], highlightthickness=1)

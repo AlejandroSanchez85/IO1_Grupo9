@@ -8,7 +8,6 @@ from .tema import COLORES, FUENTES, aplicar_tema
 from .ventana_principal import VentanaPrincipal
 from .vista_ayuda import VistaAyuda
 from .vista_inicio import VistaInicio
-from .vogel import VistaVogel
 
 __all__ = ["FORMATO", "FormatoNumeros", "COLORES", "FUENTES", "aplicar_tema", "VentanaPrincipal", "VistaInicio",
-           "VistaSimplex", "VistaVogel", "VistaAyuda"]
+           "VistaSimplex", "VistaAyuda"]
