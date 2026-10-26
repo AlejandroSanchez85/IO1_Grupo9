@@ -9,7 +9,7 @@ from __future__ import annotations
 import tkinter as tk
 from tkinter import ttk
 
-from .componentes import MarcoDesplazable, dibujar_icono
+from .componentes import MarcoDesplazable
 from .tema import COLORES, FUENTES
 
 
@@ -56,32 +56,6 @@ class VistaInicio(tk.Frame):
                               "Comparación con el óptimo mediante la prueba MODI."],
 
                              "Abrir Vogel", lambda: self.navegar("vogel"))
-
-        lista = tk.Frame(c, bg=COLORES["superficie"], highlightbackground=COLORES["borde"], highlightthickness=1)
-        lista.pack(fill="x")
-        tk.Label(lista, text="", font=FUENTES["h2"],
-                 bg=COLORES["superficie"], fg=COLORES["texto"], anchor="w").pack(fill="x", padx=20, pady=(16, 8))
-        requisitos = [
-            ("Ingreso de datos con nombres y unidades", "Pestaña 1 · Datos (tamaño variable de 1 a 8)."),
-            ("Validación con mensajes claros", "Casillas vacías, texto o datos imposibles se marcan en rojo."),
-            ("Paso a paso de cada método", "Pestañas 3 y 4: todas las tablas y la explicación de cada decisión."),
-            ("Resultado con nombres y unidades", "Pestaña 5 · Solución."),
-            ("Aviso de casos especiales", "Avisos de color y ventanas emergentes (no acotado, alternativos, empates...)."),
-            ("Visualización clara", "Tablas por iteración con colores (pestañas 3 y 4)."),
-            ("Ejemplos precargados", "Caso real y problemas de prueba con casos especiales y tamaño máximo."),
-            ("Análisis de sensibilidad", "Simplex · pestaña 6: precios sombra, rangos de c_j y b_i con interpretación."),
-        ]
-        for titulo, detalle in requisitos:
-            renglon = tk.Frame(lista, bg=COLORES["superficie"])
-            renglon.pack(fill="x", padx=20, pady=3)
-            icono = tk.Canvas(renglon, width=22, height=22, bg=COLORES["superficie"], highlightthickness=0)
-            icono.pack(side="left")
-            dibujar_icono(icono, "exito", 11, 11, 9)
-            tk.Label(renglon, text=titulo, font=FUENTES["base_negrita"], bg=COLORES["superficie"],
-                     fg=COLORES["texto"], width=36, anchor="w").pack(side="left", padx=(8, 0))
-            tk.Label(renglon, text=detalle, font=FUENTES["base"], bg=COLORES["superficie"], fg=COLORES["texto_suave"],
-                     anchor="w", justify="left", wraplength=560).pack(side="left", fill="x", expand=True)
-        tk.Frame(lista, bg=COLORES["superficie"], height=12).pack()
 
     def _tarjeta_metodo(self, fila, columna, titulo, subtitulo, puntos, texto_boton, comando):
         tarjeta = tk.Frame(fila, bg=COLORES["superficie"], highlightbackground=COLORES["borde"], highlightthickness=1)
