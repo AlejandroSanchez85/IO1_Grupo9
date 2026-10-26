@@ -45,8 +45,7 @@ class VistaInicio(tk.Frame):
                               "Cada tabla con la variable que entra, la que sale y el pivote.",
                               "Cálculo de Zj y Cj − Zj y operaciones de fila explicadas.",
                               "Avisa: no acotado, óptimos alternativos y degeneración.",
-                              "Análisis de sensibilidad: precios sombra, costos reducidos, rangos de c_j y b_i.",
-                              "Gráficas y reporte exportable (HTML/PDF)."],
+                              "Análisis de sensibilidad: precios sombra, costos reducidos, rangos de c_j y b_i."],
                              "Abrir Simplex", lambda: self.navegar("simplex"))
         self._tarjeta_metodo(fila, 1, "Método de Vogel", "Transporte · minimizar costo",
                              ["Hasta 8 orígenes × 8 destinos, balanceado o no.",
@@ -54,7 +53,7 @@ class VistaInicio(tk.Frame):
                               "Celda escogida, asignación y línea tachada en cada paso.",
                               "Avisa: desbalance (ficticio), empates y degeneración.",
                               "Rutas prohibidas con M e infactibilidad.",
-                              "Comparación con el óptimo mediante la prueba MODI.", "Gráficas y reporte exportable (HTML/PDF)."],
+                              "Comparación con el óptimo mediante la prueba MODI."],
 
                              "Abrir Vogel", lambda: self.navegar("vogel"))
 
@@ -68,7 +67,7 @@ class VistaInicio(tk.Frame):
             ("Paso a paso de cada método", "Pestañas 3 y 4: todas las tablas y la explicación de cada decisión."),
             ("Resultado con nombres y unidades", "Pestaña 5 · Solución."),
             ("Aviso de casos especiales", "Avisos de color y ventanas emergentes (no acotado, alternativos, empates...)."),
-            ("Visualización clara", "Tablas por iteración, gráficas y red de transporte (pestaña 7)."),
+            ("Visualización clara", "Tablas por iteración con colores (pestañas 3 y 4)."),
             ("Ejemplos precargados", "Caso real y problemas de prueba con casos especiales y tamaño máximo."),
             ("Análisis de sensibilidad", "Simplex · pestaña 6: precios sombra, rangos de c_j y b_i con interpretación."),
         ]

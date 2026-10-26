@@ -3,7 +3,7 @@ vista/explicaciones/textos_simplex.py
 =====================================
 Convierte los resultados del modelo Simplex en EXPLICACIONES paso a paso
 (con los nombres y unidades del problema) y en los datos de
-las tablas que se dibujan. Lo usan los paneles y los reportes.
+las tablas que se dibujan. Lo usan los paneles.
 
 Cada explicación es una lista de bloques (texto, etiquetas) donde las
 etiquetas dan el estilo: "titulo", "subtitulo", "negrita", "formula", ...

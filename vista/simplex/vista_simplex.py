@@ -2,8 +2,7 @@
 vista/simplex/vista_simplex.py
 ==============================
 Pantalla completa del método Simplex: une todas las pestañas
-(datos, modelo, paso a paso, tablas, solución, sensibilidad, gráficas y
-reporte). Ofrece al controlador métodos simples para mostrar resultados y
+(datos, modelo, paso a paso, tablas, solución y sensibilidad). Ofrece al controlador métodos simples para mostrar resultados y
 errores.
 """
 from __future__ import annotations
@@ -12,12 +11,9 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from ..componentes.dialogos import DialogosMixin
-from ..componentes.panel_reporte import PanelReporte
 from ..formato import FORMATO
-from ..reportes import html_simplex, texto_simplex
 from ..tema import COLORES, FUENTES
 from .panel_datos_simplex import PanelDatosSimplex
-from .panel_graficas_simplex import PanelGraficasSimplex
 from .panel_iteraciones_simplex import PanelIteracionesSimplex, PanelTodasTablasSimplex
 from .panel_resultados_simplex import PanelModeloSimplex, PanelSensibilidad, PanelSolucionSimplex
 
@@ -44,18 +40,10 @@ class VistaSimplex(DialogosMixin, tk.Frame):
         self.panel_tablas = PanelTodasTablasSimplex(self.cuaderno)
         self.panel_solucion = PanelSolucionSimplex(self.cuaderno)
         self.panel_sensibilidad = PanelSensibilidad(self.cuaderno)
-        self.panel_graficas = PanelGraficasSimplex(self.cuaderno)
-        self.panel_reporte = PanelReporte(self.cuaderno, "reporte_simplex")
         for panel, titulo in ((self.panel_datos, "1 · Datos"), (self.panel_modelo, "2 · Modelo"),
                               (self.panel_pasos, "3 · Paso a paso"), (self.panel_tablas, "4 · Tablas"),
-                              (self.panel_solucion, "5 · Solución"), (self.panel_sensibilidad, "6 · Sensibilidad"),
-                              (self.panel_graficas, "7 · Gráficas"), (self.panel_reporte, "8 · Reporte")):
+                              (self.panel_solucion, "5 · Solución"), (self.panel_sensibilidad, "6 · Sensibilidad")):
             self.cuaderno.add(panel, text=titulo)
-
-        # --- Pestañas 7 · Gráficas y 8 · Reporte---
-        self.cuaderno.hide(self.panel_graficas)
-        self.cuaderno.hide(self.panel_reporte)
-
         FORMATO.suscribir(self.refrescar)
 
     # --------------------------------------------------- API del controlador
@@ -75,9 +63,6 @@ class VistaSimplex(DialogosMixin, tk.Frame):
             self.panel_sensibilidad.mostrar_mensaje(
                 "No hay análisis de sensibilidad porque el problema no tiene una solución óptima finita "
                 "(es no acotado).", "advertencia")
-        self.panel_graficas.mostrar(resultado, sensibilidad)
-        self.panel_reporte.configurar(lambda: texto_simplex(self.resultado, self.sensibilidad, FORMATO),
-                                      lambda: html_simplex(self.resultado, self.sensibilidad, FORMATO))
         self._actualizar_franja()
         self.cuaderno.select(self.panel_pasos)
 
@@ -88,7 +73,7 @@ class VistaSimplex(DialogosMixin, tk.Frame):
         p = r.problema
         if r.es_optimo:
             texto = (f"Resultado: ÓPTIMO · z* = {FORMATO.num(r.z)} {p.unidad_z} · {r.numero_pivoteos} iteración(es) · "
-                     f"revise las pestañas 3 a 8")
+                     f"revise las pestañas 3 a 6")
             fondo, color = COLORES["exito_suave"], COLORES["exito"]
         elif r.estado == "no_acotado":
             texto = "Resultado: problema NO ACOTADO (z puede crecer sin límite) · vea las pestañas 3 y 5"
@@ -106,7 +91,7 @@ class VistaSimplex(DialogosMixin, tk.Frame):
         if self.resultado is None:
             return
         for panel in (self.panel_modelo, self.panel_pasos, self.panel_tablas, self.panel_solucion,
-                      self.panel_sensibilidad, self.panel_graficas, self.panel_reporte):
+                      self.panel_sensibilidad):
             panel.refrescar()
         self._actualizar_franja()
 
